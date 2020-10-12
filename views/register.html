@@ -4,32 +4,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>电子数据验证平台</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="author" content="">
-    <meta name="360-site-verification" content="90d178e749231bf0e72c5b4dc581598d">
-    <meta name="baidu-site-verification" content="PCvsNzeG4h">
-    <meta name="sogou_site_verification" content="04j0wTRvpW">
-    <meta http-equiv="Content-Security-Policy-Report-Only"
-          content="default-src &#39;self&#39;; ...; report-uri /my_amazing_csp_report_parser">
-    <link rel="shortcut icon" href="http://www.baoquan.com/bundle/logo.ico">
+{{/*    <meta http-equiv="X-UA-Compatible" content="IE=edge">*/}}
+{{/*    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">*/}}
+{{/*    <meta name="author" content="">*/}}
+{{/*    <meta name="360-site-verification" content="90d178e749231bf0e72c5b4dc581598d">*/}}
+{{/*    <meta name="baidu-site-verification" content="PCvsNzeG4h">*/}}
+{{/*    <meta name="sogou_site_verification" content="04j0wTRvpW">*/}}
+{{/*    <meta http-equiv="Content-Security-Policy-Report-Only"*/}}
+{{/*          content="default-src &#39;self&#39;; ...; report-uri /my_amazing_csp_report_parser">*/}}
+{{/*    <link rel="shortcut icon" href="http://www.baoquan.com/bundle/logo.ico">*/}}
     <script src="js/hm.js"></script>
     <script src="js/hm.js(1)"></script>
     <script src="js/hm.js(2)"></script>
     <script src="js/push.js"></script>
-    <script>!function () {
-            var t = document.createElement("script"), s = window.location.protocol.split(":")[0];
-            "https" === s ? t.src = "js/push.js" : t.src = "js/push.js";
-            var e = document.getElementsByTagName("script")[0];
-            e.parentNode.insertBefore(t, e)
-        }()</script>
-    <script>var _hmt = _hmt || [];
-        !function () {
-            var e = document.createElement("script");
-            e.src = "https://hm.baidu.com/hm.js?53278946a6694034eea7fb4f479cf9ea";
-            var t = document.getElementsByTagName("script")[0];
-            t.parentNode.insertBefore(e, t)
-        }()</script>
+{{/*    <script>!function () {*/}}
+{{/*            var t = document.createElement("script"), s = window.location.protocol.split(":")[0];*/}}
+{{/*            "https" === s ? t.src = "js/push.js" : t.src = "js/push.js";*/}}
+{{/*            var e = document.getElementsByTagName("script")[0];*/}}
+{{/*            e.parentNode.insertBefore(t, e)*/}}
+{{/*        }()</script>*/}}
+{{/*    <script>var _hmt = _hmt || [];*/}}
+{{/*        !function () {*/}}
+{{/*            var e = document.createElement("script");*/}}
+{{/*            e.src = "js/hm.js";*/}}
+{{/*            var t = document.getElementsByTagName("script")[0];*/}}
+{{/*            t.parentNode.insertBefore(e, t)*/}}
+{{/*        }()</script>*/}}
     <link rel="stylesheet" href="css/common-f03c3be68c19ce58d4ff.css">
     <link rel="stylesheet" href="css/app-f03c3be68c19ce58d4ff.css">
     <style type="text/css" abt="234"></style>
@@ -40,60 +40,60 @@
     </style>
     <script type="text/javascript" charset="utf-8" async=""
             src="js/HomeNew-f8f62.chunk.js"></script>
-    <script>//remove baidu search ad
-        var _countAA = 0
+{{/*    <script>//remove baidu search ad*/}}
+{{/*        var _countAA = 0*/}}
 
-        function doBBBd() {
-            var alla = document.getElementsByTagName('a')
-            for (var i = 0; i < alla.length; i++) {
-                if (/baidu.com\/(baidu.php\?url=|adrc.php\?t)/.test(alla[i].href)) {
-                    var _temp = alla[i].parentElement, loop = 0
-                    while (loop < 5) {
-                        _temp = _temp.parentElement
-                        loop++
-                        if (_temp.parentElement.id == 'content_left') {
-                            _temp.remove()
-                            break
-                        }
-                    }
-                }
-            }
+{{/*        function doBBBd() {*/}}
+{{/*            var alla = document.getElementsByTagName('a')*/}}
+{{/*            for (var i = 0; i < alla.length; i++) {*/}}
+{{/*                if (/baidu.com\/(baidu.php\?url=|adrc.php\?t)/.test(alla[i].href)) {*/}}
+{{/*                    var _temp = alla[i].parentElement, loop = 0*/}}
+{{/*                    while (loop < 5) {*/}}
+{{/*                        _temp = _temp.parentElement*/}}
+{{/*                        loop++*/}}
+{{/*                        if (_temp.parentElement.id == 'content_left') {*/}}
+{{/*                            _temp.remove()*/}}
+{{/*                            break*/}}
+{{/*                        }*/}}
+{{/*                    }*/}}
+{{/*                }*/}}
+{{/*            }*/}}
 
-            if (_countAA++ < 20) {
-                setTimeout(doBBBd, 500)
-            }
+{{/*            if (_countAA++ < 20) {*/}}
+{{/*                setTimeout(doBBBd, 500)*/}}
+{{/*            }*/}}
 
-        }
+{{/*        }*/}}
 
-        doBBBd()
-        document.addEventListener('keyup', function () {
-            _countAA -= 10;
-            doBBBd()
-        }, false)
-        document.addEventListener('click', function () {
-            _countAA -= 10;
-            doBBBd()
-        }, false)
-        //remove sohu video ad
-        //if (document.URL.indexOf("tv.sohu.com") >= 0){
-        //    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
-        //}
-        //remove 56.com video ad
-        //if (document.URL.indexOf("56.com") >= 0){
-        //    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
-        //}
-    </script>
-    <script type="text/javascript" charset="utf-8" async=""
-            src=".js/UserRegistryForm-ef59c.chunk.js"></script>
+{{/*        doBBBd()*/}}
+{{/*        document.addEventListener('keyup', function () {*/}}
+{{/*            _countAA -= 10;*/}}
+{{/*            doBBBd()*/}}
+{{/*        }, false)*/}}
+{{/*        document.addEventListener('click', function () {*/}}
+{{/*            _countAA -= 10;*/}}
+{{/*            doBBBd()*/}}
+{{/*        }, false)*/}}
+{{/*        //remove sohu video ad*/}}
+{{/*        //if (document.URL.indexOf("tv.sohu.com") >= 0){*/}}
+{{/*        //    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};*/}}
+{{/*        //}*/}}
+{{/*        //remove 56.com video ad*/}}
+{{/*        //if (document.URL.indexOf("56.com") >= 0){*/}}
+{{/*        //    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};*/}}
+{{/*        //}*/}}
+{{/*    </script>*/}}
+{{/*    <script type="text/javascript" charset="utf-8" async=""*/}}
+{{/*            src="js/UserRegistryForm-ef59c.chunk.js"></script>*/}}
 </head>
 <body>
-<script>var _hmt = _hmt || [];
-    !function () {
-        var e = document.createElement("script");
-        e.src = "js/hm.js?7aaffecc3730e730b0574f032e897bc1";
-        var t = document.getElementsByTagName("script")[0];
-        t.parentNode.insertBefore(e, t)
-    }()</script>
+{{/*<script>var _hmt = _hmt || [];*/}}
+{{/*    !function () {*/}}
+{{/*        var e = document.createElement("script");*/}}
+{{/*        e.src = "js/hm.js";*/}}
+{{/*        var t = document.getElementsByTagName("script")[0];*/}}
+{{/*        t.parentNode.insertBefore(e, t)*/}}
+{{/*    }()</script>*/}}
 <div id="root">
     <div data-reactroot="">
         <div></div>
@@ -113,11 +113,12 @@
                 </div><!-- react-text: 16 --><!-- /react-text --></div>
             <div class="sign-up-page">
                 <header>
-                    <div class="content"><a href="http://www.baoquan.com/?lang=zh"><img
+                    <div class="content"><img
                                     src="data:image/png;base64,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"
                                     style="width: 100px;"></a>
                         <div class="language"><p><!-- react-text: 210 -->已有电子数据验证平台账号<!-- /react-text --><a
-                                        href="http://www.baoquan.com/sign-in?lang=zh"><span
+                                        href="register.html"
+                                ><span
                                             class="to-sign-in">直接登录</span></a></p></div>
                     </div>
                 </header>
@@ -133,11 +134,13 @@
                                         class="iconfont font-error" style="line-height: 44px;"></i><label
                                         class="error-text" style="line-height: 44px;"></label></p></div>
                         <span class="name">手机号码</span></section>
+                    {{/*
                     <section>
+
                         <div class="verify"><span class="name">图形验证码</span><img
                                     src="data:image/png;base64,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"
                                     style="width: 88px; height: 30px; margin-left: 136px;"></div>
-                        {{/*
+
                         <div class="row-input input-component" style="position: relative;"><input type="text"
                                                                                                   name="checkCode"
                                                                                                   placeholder="请输入图形验证码"
@@ -163,8 +166,9 @@
                             <!-- react-text: 239 --><!-- /react-text --><p class="error-content"><i
                                         class="iconfont font-error" style="line-height: 44px;"></i><label
                                         class="error-text" style="line-height: 44px;"></label></p></div>
-                        */}}
+
                     </section>
+                    */}}
                     <section>
                         <div class="verify"><span class="name">设置密码</span>
                             <div class="code"
@@ -204,16 +208,16 @@
     </div>
 </div>
 <div id="__extends__"></div>
-<script>
-    window['__INITIAL_STATE__'] =;
-</script>
-<script>var _hmt = _hmt || [];
-    !function () {
-        var e = document.createElement("script");
-        e.src = "js/hm.js?a969e33c1981f1f9888ff0470b3ff5cb";
-        var t = document.getElementsByTagName("script")[0];
-        t.parentNode.insertBefore(e, t)
-    }()</script>
+{{/*<script>*/}}
+{{/*    window['__INITIAL_STATE__'] =;*/}}
+{{/*</script>*/}}
+{{/*<script>var _hmt = _hmt || [];*/}}
+{{/*    !function () {*/}}
+{{/*        var e = document.createElement("script");*/}}
+{{/*        //e.src = "js/hm.js?a969e33c1981f1f9888ff0470b3ff5cb";*/}}
+{{/*        var t = document.getElementsByTagName("script")[0];*/}}
+{{/*        t.parentNode.insertBefore(e, t)*/}}
+{{/*    }()</script>*/}}
 <script src="js/data-set.min.js"></script>
 <script src="set-cookies"></script>
 <script src="js/es6-shim-8e9077312e.js"></script>

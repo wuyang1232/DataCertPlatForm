@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e71eed7b-0b6b-4ff8-b2fb-3b79b8e65a6a" name="Default Changelist" comment="" />
+    <list default="true" id="e71eed7b-0b6b-4ff8-b2fb-3b79b8e65a6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/indexNew.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/queryUser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_mysql/query_db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/UserLoginForm-86fb5.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/registercontroller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registercontroller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/HomeNew-f8f62.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/HomeNew-f8f62.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/UserRegistryForm-ef59c.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/UserRegistryForm-ef59c.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/app-f03c3be68c19ce58d4ff.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app-f03c3be68c19ce58d4ff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/common-f03c3be68c19ce58d4ff.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/common-f03c3be68c19ce58d4ff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/data-set.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/data-set.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/es6-shim-8e9077312e.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/es6-shim-8e9077312e.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/hm.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/hm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-02053ebe83.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-02053ebe83.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/push.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/push.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/set-cookies" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,13 +36,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTML File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
   <component name="GOROOT" path="$PROJECT_DIR$/../../../GO" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ifKbsXDE9cBsiP8h8sLKQT8uOR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,16 +56,21 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HelloBeego190604" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\上课\GoProject\src\DataCertPlatform\views" />
       <recent name="D:\上课\GoProject\src\DataCertPlatform\static\js" />
       <recent name="D:\上课\GoProject\src\DataCertPlatform\static\css" />
+      <recent name="D:\上课\GoProject\src\DataCertPlatform\views" />
       <recent name="D:\上课\GoProject\src\DataCertPlatform\static\img" />
     </key>
   </component>
@@ -65,33 +97,37 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1602417128168" />
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602416125225">
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602483292803">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1602416125225" />
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1602483292803" />
     <state x="488" y="76" key="#go_build_DataCertPlatform" timestamp="1602293305895">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="488" y="76" key="#go_build_DataCertPlatform/0.0.1536.864@0.0.1536.864" timestamp="1602293305895" />
-    <state x="548" y="187" key="FileChooserDialogImpl" timestamp="1602429339347">
+    <state x="548" y="187" key="FileChooserDialogImpl" timestamp="1602464382851">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="548" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1602429339347" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1602430863790">
+    <state x="548" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1602464382851" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1602487707166">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602430863790" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1602430863789">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602487707166" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1602487707166">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602430863789" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1602430863789">
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602487707166" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1602487707165">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602430863789" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1602430863790">
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602487707165" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1602487707166">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602430863790" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602487707166" />
+    <state x="270" y="74" key="SettingsEditor" timestamp="1602486566893">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="270" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1602486566893" />
   </component>
 </project>
