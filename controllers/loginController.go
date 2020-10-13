@@ -1,14 +1,14 @@
 package controllers
 
 import (
-	"DataCertPlatform/db_mysql"
+	//"DataCertPlatform/db_mysql"
 	"DataCertPlatform/models"
 	"database/sql"
 	"fmt"
 	"github.com/astaxie/beego"
 )
 
-type QueryUser struct {
+type LoginController struct {
 	beego.Controller
 }
 var Db *sql.DB
@@ -42,29 +42,31 @@ func Connect(){
 	fmt.Println(db)
 	fmt.Println("数据库连接成功")
 }
-func (r *QueryUser) Post(){
+func (r *LoginController) Post(){
 	//1、解析用户端提交的请求数据
 	var user models.User
-	err := r.ParseForm(&user)
+	err := r.ParseForm(&user)//地址读取
 	fmt.Println(user)
 	fmt.Println("逗比")
 	if err != nil{
-		r.Ctx.WriteString("抱歉...数据解析失败，请重试!")
+		fmt.Println(err.Error())
+		r.Ctx.WriteString("抱歉...用户登录信息数据解析失败，请重试!")
 		return
 	}
 	fmt.Println("逗比1")
-	admin_num,err := db_mysql.QueryUser(user)
+
+	//2、根据解析到的数据，执行数据库查新操作
+	u,err := user.QueryUser()
+
+	//3、判断数据库查询结果
 	if err != nil{
-		fmt.Println("逗比2")
 		fmt.Println(err.Error())
+		r.Ctx.WriteString("抱歉...用户登录失败，请重试!")
 		return
 	}
-	if admin_num > 0{
-		fmt.Println("用户查找成功")
 
-		r.TplName = "index.html" //用户存在转入主页面
-	}else{
-		fmt.Println(err.Error())
-		fmt.Println("用户查询失败")
-	}
+	//4、根据查询结果，返回客户端相应的信息或页面跳转
+	r.Data["Phone"] = u.Phone//动态数据设置
+	r.TplName = "index.html" //用户存在转入主页面
 }
+

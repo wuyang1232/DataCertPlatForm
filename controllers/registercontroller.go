@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"DataCertPlatform/db_mysql"
 	"DataCertPlatform/models"
 	"fmt"
 	"github.com/astaxie/beego"
@@ -11,6 +10,7 @@ type RegisterController struct {
 	beego.Controller
 }
 //该方法用于处理用户注册的逻辑
+//直接跳转登录页面
 func (r *RegisterController)Get(){
 
 	r.TplName = "login.html"
@@ -27,7 +27,7 @@ func (r *RegisterController) Post(){
 	//2、将解析到的数据保存到数据库中
 	if len(user.Phone) == 11{
 		if len(user.Password) >= 6 && len(user.Password) <= 18{
-			row, err := db_mysql.AddUser(user)
+			row, err := user.AddUser()
 			if err != nil{
 				r.Ctx.WriteString("数据导入数据库出错，请重试!")
 			}
@@ -42,4 +42,9 @@ func (r *RegisterController) Post(){
 		//如果失败提示错误信息
 		r.Ctx.WriteString("电话号码错误")
 	}
+
+
+
+	//id, err := db_mysql.AddUser(user)
+
 }

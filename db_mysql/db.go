@@ -1,13 +1,10 @@
 package db_mysql
 
 import (
-	"DataCertPlatform/models"
-	"crypto/md5"
 	"database/sql"
-	"encoding/hex"
 	"fmt"
 	"github.com/astaxie/beego"
-	_"大一下学期/github.com/go-sql-driver/mysql"
+	_ "大一下学期/github.com/go-sql-driver/mysql"
 )
 
 var Db *sql.DB
@@ -41,20 +38,20 @@ func Connect(){
 	fmt.Println(db)
 	fmt.Println("数据库连接成功")
 }
-func AddUser(u models.User)(int64,error){
-	md5Hash := md5.New()
-	md5Hash.Write([]byte(u.Password))
-	passwordBytes := md5Hash.Sum(nil)
-	u.Password = hex.EncodeToString(passwordBytes)
-	result,err := Db.Exec("insert into user(phone,password) values(?,?)",u.Phone,u.Password)
-	if err != nil{
-		fmt.Println(err.Error())
-		return -1,err
-	}
-	row, err := result.RowsAffected()
-	if err != nil{
-		fmt.Println(err.Error())
-		return -1, err
-	}
-	return row, nil
-}
+//func AddUser(u models.User)(int64,error){
+//	md5Hash := md5.New()
+//	md5Hash.Write([]byte(u.Password))
+//	passwordBytes := md5Hash.Sum(nil)
+//	u.Password = hex.EncodeToString(passwordBytes)
+//	result,err := Db.Exec("insert into user(phone,password) values(?,?)",u.Phone,u.Password)
+//	if err != nil{
+//		fmt.Println(err.Error())
+//		return -1,err
+//	}
+//	row, err := result.RowsAffected()
+//	if err != nil{
+//		fmt.Println(err.Error())
+//		return -1, err
+//	}
+//	return row, nil
+//}

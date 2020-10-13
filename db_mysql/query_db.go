@@ -1,7 +1,6 @@
 package db_mysql
 
 import (
-	"DataCertPlatform/models"
 	_ "大一下学期/github.com/go-sql-driver/mysql"
 )
 
@@ -14,6 +13,6 @@ import (
 //	}
 //	return admin_num,nil
 //}
-func QueryUser(name string)([]models.User,error){
-
-}
+//func QueryUser(user models.User)([]models.User,error){
+//	rows, err := Db.Query("select * from user where phone = ? and password = ?",user.Phone,user.Password)
+//}

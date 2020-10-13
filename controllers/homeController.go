@@ -2,9 +2,9 @@ package controllers
 
 import "beego"
 
-type IndexNew struct {
+type HomeController struct {
 	beego.Controller
 }
-func (r *IndexNew)Post(){
+func (r *HomeController)Post(){
 	r.TplName = "login.html"
 }
