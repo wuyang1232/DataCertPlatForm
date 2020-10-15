@@ -147,10 +147,10 @@
                                     </li>
                                     <div class="notify-container">
                                         <div class="user">
-                                            <div class="user-content"><span class="phone"></span><i
+                                            <div class="user-content"><span class="phone">{{.Phone}}</span><i
                                                         class="iconfont font-down"></i></div>
                                             <ul><a href="https://www.baoquan.com/setting?lang=zh">
-                                                    <li>{{.Phone}}</li>
+                                                    <li>账户中心</li>
                                                 </a>
                                                 <p class="to-login-out">退出</p></ul>
                                         </div>
@@ -203,6 +203,7 @@
                                     <div class="attestations-profile-content upload-content">
                                         <section class="file-content"><!-- react-text: 679 --><!-- /react-text -->
                                             <form method="post" enctype="multipart/form-data" action="/index">
+{{/*                                                multipart/form-data文件上传   */}}
                                                 <div class="files-container">
                                                     <div class="files-box">
                                                         <div class="tag"><p><span class="musts">*</span><span>文件标签</span>
