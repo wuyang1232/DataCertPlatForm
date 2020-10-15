@@ -2,7 +2,11 @@ package controllers
 
 import (
 	"beego"
+	"crypto/sha256"
+	"encoding/hex"
 	"fmt"
+	"io"
+	"io/ioutil"
 	"os"
 	"strings"
 )
@@ -12,19 +16,19 @@ type UploadController struct {
 	beego.Controller
 }
 //该post方法用于处理该用户在客户端提交的文件认证
-func (u *UploadController)Post(){
+func (u *UploadController)Post1(){
 	//1、解析用户上传的数据及文件信息
 	//用户上传的自定义标题
 	title := u.Ctx.Request.PostFormValue("index_title")//用户输入的标题
 
 	//用户上传的文件
 	file, header, err := u.GetFile("file")//封装好了。下面可以通过该名字获取文件
-	defer file.Close()
 
 	if err != nil{//解析客户端的文件出现错误
 		u.Ctx.WriteString("抱歉，文件解析失败，请重试！")
 		return
 	}
+	defer file.Close()//延迟执行 空指针错误: invalid memory or nil pointer dere
 	fmt.Println("自定义的标题:",title)
 	//获得到了上传的文件
 	fmt.Println("上传的文件名称:",header.Filename)
@@ -57,10 +61,12 @@ func (u *UploadController)Post(){
 	saveDir := "static/upload"
 	//打开文件
 	f, err := os.Open(saveDir)
-	if err != nil{
+	//os.OpenFile("文件名",os.O_CREATE|os.O_RDWR,777)如果文件不存在就重新创建，存在的话就打开
+
+	if err != nil{//打开文件夹失败，自己创建
 		//创建文件夹
 		//err = os.Mkdir(saveDir,777)
-		//if err != nil{//打开文件夹失败，自己创建
+		//if err != nil{
 			//创建文件夹
 			err = os.Mkdir(saveDir,777)
 			if err != nil{
@@ -82,7 +88,7 @@ func (u *UploadController)Post(){
 	fmt.Println("打开的文件夹：",f.Name())
 
 	//文件名：文件路径 + 文件名 + “.” + 文件拓展名
-	saveName :=saveDir +  "/" + header.Filename
+	saveName := saveDir +  "/" + header.Filename
 	fmt.Println("要保存的文件名",saveName)
 	//fromFile:文件
 	//toFile:要保存的文件路径
@@ -94,7 +100,69 @@ func (u *UploadController)Post(){
 	}
 
 	fmt.Println("上传的文件:",file)
+
+
 	u.Ctx.WriteString("已获取到上传文件")
 
 	//u.TplName = "login.html"
+}
+
+//该post方法用于处理该用户在客户端提交的文件认证
+func (u *UploadController) Post(){
+	//1、解析用户上传的数据及文件信息
+	//用户上传的自定义标题
+	title := u.Ctx.Request.PostFormValue("index_title")//用户输入的标题
+	fmt.Println("电子数据标签：",title)
+	//用户上传的文件
+	file, header, err := u.GetFile("file")//封装好了。下面可以通过该名字获取文件
+
+	if err != nil{//解析客户端的文件出现错误
+		u.Ctx.WriteString("抱歉，文件解析失败，请重试！")
+		return
+	}
+	defer file.Close()//延迟执行 空指针错误: invalid memory or nil pointer dere...
+	fmt.Println("自定义的标题:",title)
+	//获得到了上传的文件
+	fmt.Println("上传的文件名称:",header.Filename)
+	fileNameSlice := strings.Split(header.Filename,".")
+	fileType := fileNameSlice[1]
+	if fileType != "jpg" && fileType != "png"{
+		//文件类型不支持
+		u.Ctx.WriteString("抱歉，文件类型不符合，请上传合适格式的文件")
+		return
+	}
+	//isJpg := strings.HasSuffix(header.Filename,".jpg")
+
+	//文件大小200kb
+	config := beego.AppConfig
+	fileSize,err := config.Int64("file_size")
+	if header.Size / 1024 > fileSize{
+		u.Ctx.WriteString("抱歉，文件大小超出范围，请上传合适格式的文件")
+		return
+	}
+	fmt.Println("文件的大小:",header.Size)//字节大小
+	//使用io包提供的方法保存文件io.Copy(目标文件，数据源)
+	saveFilePath := "static/upload/" + header.Filename
+	saveFile,err := os.OpenFile(saveFilePath,os.O_CREATE|os.O_RDWR,777)
+	if err != nil{
+		u.Ctx.WriteString("抱歉，电子数据认证失败，请重试！")
+		return
+	}
+	_, err = io.Copy(saveFile,file)//int64复制的长度
+	if err != nil{
+		u.Ctx.WriteString("抱歉，电子数据认证失败，请重新重试！")
+		return
+	}
+
+	//2、计算文件的SHA256值
+	hash256 := sha256.New()
+	fileBytes,_ := ioutil.ReadAll(file)
+	hash256.Write(fileBytes)
+	hashBytes := hash256.Sum(nil)
+	fmt.Println(hex.EncodeToString(hashBytes))
+	//先查询用户id
+
+	//把上传的文件作为记录保存到数据库中
+
+	u.Ctx.WriteString("恭喜，已接收到上传文件")
 }
