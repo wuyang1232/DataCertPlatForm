@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"DataCertPlatform/models"
 	"beego"
+	"crypto/md5"
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
@@ -9,6 +11,7 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+	"time"
 )
 
 //该控制器结构体用于处理文件上传功能
@@ -111,6 +114,7 @@ func (u *UploadController)Post1(){
 func (u *UploadController) Post(){
 	//1、解析用户上传的数据及文件信息
 	//用户上传的自定义标题
+	phone := u.Ctx.Request.PostFormValue("phone")
 	title := u.Ctx.Request.PostFormValue("index_title")//用户输入的标题
 	fmt.Println("电子数据标签：",title)
 	//用户上传的文件
@@ -161,8 +165,31 @@ func (u *UploadController) Post(){
 	hashBytes := hash256.Sum(nil)
 	fmt.Println(hex.EncodeToString(hashBytes))
 	//先查询用户id
-
+	user1,err := models.User{Phone: phone}.QueryUserByPhone()
+	if err != nil{
+		u.Ctx.WriteString("抱歉，电子数据认证过失败，请重试")
+	}
 	//把上传的文件作为记录保存到数据库中
+	//计算md5值
+	md5Hash := md5.New()
+	fileMd5Bytes,err := ioutil.ReadAll(saveFile)
+	md5Hash.Write(fileMd5Bytes)
+	bytes  := md5Hash.Sum(nil)
+
+	record := models.UploadRecord{
+		UserId: user1.Id,
+		FileName:header.Filename,
+		FileSize:header.Size,
+		FileCert: hex.EncodeToString(bytes),
+		FileTitle:title,
+		CertTime:time.Now().Unix(),
+	}
+	//保存认证数据到数据库中
+	_,err = record.SaveRecord()
+	if err != nil{
+		u.Ctx.WriteString("电子数据认证保存失败，请重试！")
+		return
+	}
 
 	u.Ctx.WriteString("恭喜，已接收到上传文件")
 }
