@@ -30,5 +30,14 @@ func QueryRecordsByUserId(userId int)([]UploadRecord,error){
 	if err != nil{
 		return nil,err
 	}
-
+	records := make([]UploadRecord, 0)//容器
+	for rs.Next(){
+		var record UploadRecord
+		err := rs.Scan(&record.Id,&record.UserId,&record.FileName,&record.FileSize,&record.FileCert,&record.FileTitle,&record.CertTime)
+		if err != nil{
+			return nil, err
+		}
+		records = append(records,record)
+	}
+	return records,nil
 }
