@@ -74,7 +74,8 @@ func (u *UploadController) Post(){
 	}
 	//把上传的文件作为记录保存到数据库中
 	//计算md5值
-	md5String,err := utils.Md5HashReader(file)
+	saveFile,err := os.Open(saveFilePath)
+	md5String,err := utils.Md5HashReader(saveFile)
 	if err != nil{
 		u.Ctx.WriteString("调子数据认证失败")
 		return
@@ -98,6 +99,7 @@ func (u *UploadController) Post(){
 	//u.TplName = "some.html"
 	records, err := models.QueryRecordsByUserId(user1.Id)
 	if err != nil{
+		fmt.Println(err.Error())
 		u.Ctx.WriteString("抱歉，获取电子数据列表失败，请重新尝试！！！")
 		return
 	}

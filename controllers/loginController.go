@@ -66,7 +66,7 @@ func (r *LoginController) Post(){
 	}
 
 	//4、根据查询结果，返回客户端相应的信息或页面跳转
-	r.Data["phone"] = u.Phone//动态数据设置
+	r.Data["Phone"] = u.Phone//动态数据设置
 	r.TplName = "index.html" //用户存在转入主页面，文件上传界面
 }
 

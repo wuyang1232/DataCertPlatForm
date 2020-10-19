@@ -1,6 +1,9 @@
 package models
 
-import "DataCertPlatform/db_mysql"
+import (
+	"DataCertPlatform/db_mysql"
+	"DataCertPlatform/utils"
+)
 
 type UploadRecord struct {
 	Id int
@@ -10,11 +13,12 @@ type UploadRecord struct {
 	FileCert string
 	FileTitle string
 	CertTime int64
+	CertTimeFormat string
 }
 //把一条认证数据保存到数据库中
 func (u UploadRecord) SaveRecord()(int64,error){
 	re, err := db_mysql.Db.Exec("insert into upload_record(user_id, file_name, file_size, file_cert, file_title, cert_time)" +
-		"values(?,?,?,?,?,?)",u.UserId,u.FileName,u.FileSize,u.FileCert,u.FileCert,u.CertTime)
+		"values(?,?,?,?,?,?)",u.UserId,u.FileName,u.FileSize,u.FileCert,u.FileTitle,u.CertTime)
 	if err != nil{
 		return -1,err
 	}
@@ -37,6 +41,10 @@ func QueryRecordsByUserId(userId int)([]UploadRecord,error){
 		if err != nil{
 			return nil, err
 		}
+		//整形转换成字符串
+		tStr := utils.TimeFormat(record.CertTime,utils.TIME_FORMAT_ONE)
+		record.CertTimeFormat = tStr
+		//utils.TimeFormat(record.CertTime,utils.TIME_FORMAT_ONE)
 		records = append(records,record)
 	}
 	return records,nil
