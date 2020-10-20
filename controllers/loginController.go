@@ -47,13 +47,13 @@ func (r *LoginController) Post(){
 	var user models.User
 	err := r.ParseForm(&user)//地址读取
 	fmt.Println(user)
-	fmt.Println("逗比")
+	//fmt.Println("逗比")
 	if err != nil{
 		fmt.Println(err.Error())
 		r.Ctx.WriteString("抱歉...用户登录信息数据解析失败，请重试!")
 		return
 	}
-	fmt.Println("逗比1")
+	//fmt.Println("逗比1")
 
 	//2、根据解析到的数据，执行数据库查新操作
 	u,err := user.QueryUser()
