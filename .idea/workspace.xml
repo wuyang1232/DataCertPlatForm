@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e71eed7b-0b6b-4ff8-b2fb-3b79b8e65a6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/convert.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blockchain/pow.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/block.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/block.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/loginController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/loginController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/116f647c696b4233.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/6031B3AAE0E0F7839949FF752D133FD9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/833564720.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/836430600.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/8F496AC98DC41AAAADDD953F17ED625C.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/A10A7265CDE06C508C34722C67591059.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/c53f33b69a9e03f115bdf29acb3d4b01bc47e1746afeb8f82.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/微信图片_20201014103522.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/hash.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/hash.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +45,7 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../大二上学期/DataCertTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../GOWeb开发与设计/课堂笔记/DataCertPlatform1020" />
     <property name="settings.editor.selected.configurable" value="goland.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -134,10 +124,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="477" y="67" key="#go_build_uploadController.go_(1)/0.0.1536.864@0.0.1536.864" timestamp="1603034356277" />
-    <state x="548" y="187" key="FileChooserDialogImpl" timestamp="1603192946957">
+    <state x="548" y="187" key="FileChooserDialogImpl" timestamp="1603281224669">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="548" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603192946957" />
+    <state x="548" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603281224669" />
     <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1603160471872">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
