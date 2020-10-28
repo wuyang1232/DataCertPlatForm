@@ -4,8 +4,6 @@ import (
 	"DataCertPlatform/blockchain"
 	"DataCertPlatform/db_mysql"
 	_ "DataCertPlatform/routers"
-	"encoding/json"
-	"encoding/xml"
 	"fmt"
 	"github.com/astaxie/beego"
 )
@@ -25,10 +23,20 @@ func main() {
 	//序列化----将数据从内存形式转换成可以持久化存储在硬盘上或网络上传输的形式
 	//反序列化----将数据从文件或者网络中读取，
 	//只有序列化以后的数据才可以进行传输
-	blockJson,_ := json.Marshal(block0)
-	fmt.Println("通过json序列化以后的block：",string(blockJson))
-	blockXml,_ := xml.Marshal(block0)
-	fmt.Println("通过json序列化以后的block:",string(blockXml))
+	//blockJson,_ := json.Marshal(block0)
+	//fmt.Println("通过json序列化以后的block：",string(blockJson))
+	//blockXml,_ := xml.Marshal(block0)
+	//fmt.Println("通过json序列化以后的block:",string(blockXml))
+
+	block0Bytes := block0.Serialize()
+	fmt.Println("创世区块gob序列化之后：",block0Bytes)
+	deBlock0, err := blockchain.DeSerialize(block0Bytes)
+	if err != nil{
+		fmt.Println(err.Error())
+		return
+	}
+	fmt.Println("反序列化后的区块的高度：",deBlock0.Height)
+	fmt.Printf("反序列化后的区块的哈希%x\n：",deBlock0.Hash)
 	return
 	//打开数据库
 	db_mysql.Connect()

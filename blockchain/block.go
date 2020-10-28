@@ -64,10 +64,11 @@ func CreateGenesisBlock() Block {
 }
 
 //对区块进行序列化
-func (b Block) Serialize(){
+func (b Block) Serialize()[]byte{
 	buff :=  new(bytes.Buffer)//缓冲区
 	encoder := gob.NewEncoder(buff)
 	encoder.Encode(b)//将区块b放入到序列化编码器中
+	return buff.Bytes()
 }
 //区块的反序列操作
 func DeSerialize(data []byte)(*Block,error){
