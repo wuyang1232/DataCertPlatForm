@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"DataCertPlatform/blockchain"
 	"DataCertPlatform/models"
 	"DataCertPlatform/utils"
 	"fmt"
@@ -95,6 +96,9 @@ func (u *UploadController) Post(){
 		u.Ctx.WriteString("电子数据认证保存失败，请重试！")
 		return
 	}
+	//将用户上传的文件的md5值和sha256 值保存到区块链上，即数据上链
+	blockchain.CHAIN.SaveData([]byte(fileHash))
+
 	//		恭喜，已接收到上传文件
 	//u.TplName = "some.html"
 	records, err := models.QueryRecordsByUserId(user1.Id)
