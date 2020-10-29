@@ -33,7 +33,7 @@ func NewBlockChain() *BlockChain {
 			}
 		}
 		lastHash := bucket.Get([]byte(LAST_HASH))
-		if len(lastHash) == 0 { //桶总没有lasthash记录，，需要创建创世区块并保存
+		if len(lastHash) == 0 { //桶中没有lasthash记录，，需要创建创世区块并保存
 			//创世区块
 			genesis := CreateGenesisBlock()
 			//区块序列化一户的数据
@@ -81,33 +81,33 @@ func NewBlockChain() *BlockChain {
 }
 
 //该方法用于便利区块链chain.db文件，并将所有的区块查出，并返回
-func (bc BlockChain)QueryAllBlocks()([]*Block,error){
-	blocks := make([]*Block,0)//blocks是一个切片容器，用于盛放查询到的区块
+func (bc BlockChain) QueryAllBlocks() ([]*Block, error) {
+	blocks := make([]*Block, 0) //blocks是一个切片容器，用于盛放查询到的区块
 
 	db := bc.BoltDb
 	var err error
 	//从chain.db文件查询所有区块
 	db.View(func(tx *bolt.Tx) error {
 		bucket := tx.Bucket([]byte(BUCKET_NAME))
-		if bucket == nil{
+		if bucket == nil {
 			err = errors.New("查询区块链数据失败！")
 			return err
 		}
 		//bucket存在
 		eachHash := bc.LastHash
 		eachBig := new(big.Int)
-		zeroBig := big.NewInt(0)//默认值0的大整数
-		for{
+		zeroBig := big.NewInt(0) //默认值0的大整数
+		for {
 			//根据区块的hash值获取对应的区块
 			eachBlockBytes := bucket.Get(eachHash)
 			//反序列化操作
-			eachBlock,_ := DeSerialize(eachBlockBytes)
+			eachBlock, _ := DeSerialize(eachBlockBytes)
 			//将便利到的没哟个区块放入到切片容器中
-			blocks = append(blocks,eachBlock)
+			blocks = append(blocks, eachBlock)
 
 			eachBig.SetBytes(eachBlock.PrevHash)
-			if eachBig.Cmp(zeroBig) == 0{//找到了创世区块
-				break//条促循环
+			if eachBig.Cmp(zeroBig) == 0 { //找到了创世区块
+				break //条促循环
 			}
 			//不满足条件，没哟找到创世区块
 			eachHash = eachBlock.PrevHash
@@ -115,14 +115,13 @@ func (bc BlockChain)QueryAllBlocks()([]*Block,error){
 		return nil
 	})
 
-
 	return blocks, err
 }
 
 //该方法用于完成根据用户输入的高度查询你对应的区块信息
-func (bc BlockChain) QueryBlockByHeight(height int64) (*Block,error){
-	if height < 0{
-		return nil,nil
+func (bc BlockChain) QueryBlockByHeight(height int64) (*Block, error) {
+	if height < 0 {
+		return nil, nil
 	}
 	db := bc.BoltDb
 
@@ -130,25 +129,25 @@ func (bc BlockChain) QueryBlockByHeight(height int64) (*Block,error){
 	var eachBlock *Block
 	db.View(func(tx *bolt.Tx) error {
 		bucket := tx.Bucket([]byte(BUCKET_NAME))
-		if bucket == nil{
+		if bucket == nil {
 			errs = errors.New("读取数据失败！")
 			return errs
 		}
 		//each:每一个
 		eachHash := bc.LastHash
-		for{//获取最后一个区块的hash
+		for { //获取最后一个区块的hash
 			eachBlockBytes := bucket.Get(eachHash)
 			//拿到最后一个区块的byte类型
 			//eachBlockBytes := bucket.Get(eachBlockHash)
 			//反序列化操作
 			eachBlock, errs = DeSerialize(eachBlockBytes)
-			if errs != nil{
+			if errs != nil {
 				return errs
 			}
-			if eachBlock.Height < height{
+			if eachBlock.Height < height {
 				break
 			}
-			if eachBlock.Height == height{
+			if eachBlock.Height == height {
 				break
 			}
 			//如果高度匹配不满足用户条件
@@ -157,7 +156,7 @@ func (bc BlockChain) QueryBlockByHeight(height int64) (*Block,error){
 
 		return nil
 	})
-	return eachBlock,errs
+	return eachBlock, errs
 }
 
 //保存数据到区块链中：先生成一个新区块，然后将新区块添加到区块链中

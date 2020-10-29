@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain.db" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/blockChain.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockChain.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/uploadController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/uploadController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +56,7 @@
       <recent name="D:\上课\GoProject\src\DataCertPlatform\static\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build uploadController.go">
+  <component name="RunManager" selected="Go Build.go build DataCertPlatform">
     <configuration name="go build DataCertPlatform" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="DataCertPlatform" />
       <working_directory value="$PROJECT_DIR$" />
@@ -91,9 +90,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build DataCertPlatform" />
         <item itemvalue="Go Build.go build uploadController.go" />
         <item itemvalue="Go Build.go build uploadController.go (1)" />
-        <item itemvalue="Go Build.go build DataCertPlatform" />
       </list>
     </recent_temporary>
   </component>
@@ -129,22 +128,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603895906693" />
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1603955713130">
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1603957406128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1603955713130" />
-    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1603955713130">
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1603957406128" />
+    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1603957406128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1603955713130" />
-    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1603955713128">
+    <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1603957406128" />
+    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1603957406128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1603955713128" />
-    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1603955713130">
+    <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1603957406128" />
+    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1603957406128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1603955713130" />
+    <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1603957406128" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1603034848441">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
