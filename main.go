@@ -23,7 +23,7 @@ func main() {
 	//	fmt.Printf("区块高度：%d,区块的hash:%x,PrevHash:%x,区块内数据：%s\n",block.Height,block.Hash,block.PrevHash,string(block.Data))
 	//
 	//}
-	return
+	//return
 	//打开数据库
 	db_mysql.Connect()
 	//静态资源文件映射设置

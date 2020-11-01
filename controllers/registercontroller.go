@@ -29,6 +29,7 @@ func (r *RegisterController) Post(){
 		if len(user.Password) >= 6 && len(user.Password) <= 18{
 			row, err := user.AddUser()
 			if err != nil{
+				fmt.Println(err.Error())
 				r.Ctx.WriteString("数据导入数据库出错，请重试!")
 			}
 			fmt.Println(row)

@@ -6,6 +6,7 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/astaxie/beego"
+	"strings"
 )
 
 type LoginController struct {
@@ -62,6 +63,12 @@ func (r *LoginController) Post(){
 	if err != nil{
 		fmt.Println(err.Error())
 		r.Ctx.WriteString("抱歉...用户登录失败，请重试!")
+		return
+	}
+	//3.1增加逻辑：判断用户是佛已经实名认证，如果没有实名认证，则跳转认证页面
+	if strings.TrimSpace(u.Name) == "" || strings.TrimSpace(u.Card) == "" {//两者有一者为空，即为没有实名认证
+		r.Data["Phone"] = user.Phone
+		r.TplName = "user_kyc.html"
 		return
 	}
 

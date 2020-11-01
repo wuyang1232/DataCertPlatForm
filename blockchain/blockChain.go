@@ -2,6 +2,7 @@ package blockchain
 
 import (
 	"errors"
+	"fmt"
 	"github.com/boltdb/bolt"
 	"math/big"
 )
@@ -198,4 +199,47 @@ func (bc *BlockChain) SaveData(data []byte) (Block, error) {
 	})
 	//返回值语句，newBlock，err ，其中err可能包含错误信息
 	return newBlock, err
+}
+
+//该方法用于根据用户输入的认证号查询到对应的区块信息
+func (bc BlockChain)QueryBlockByCertId(cert_id string)(*Block,error){
+	db := bc.BoltDb
+	var err error
+	var block *Block
+	fmt.Println("查询中",cert_id)
+	db.View(func(tx *bolt.Tx) error {
+		bucket := tx.Bucket([]byte(BUCKET_NAME))
+		if bucket == nil{//判断桶是否存在
+			err = errors.New("查询链上数据发生错误，请重试！")
+			return err
+		}
+		eachHash := bc.LastHash
+		eachBig := new(big.Int)
+		zeroBig := big.NewInt(0)
+		for{
+			eachBlockBytes := bucket.Get(eachHash)
+			eachBlock,err := DeSerialize(eachBlockBytes)
+			fmt.Println("所有区块信息",eachBlock)
+
+			fmt.Println("所有区块hash信息",string(eachBlock.Data))
+			fmt.Println(cert_id)
+			if err != nil{
+				break
+			}
+
+			//将遍历到的区块中的数据跟用户提供的认证号进行比较
+			if string(eachBlock.Data) == cert_id{//if成立，找到区块
+				block = eachBlock
+				break
+			}
+			eachBig.SetBytes(eachBlock.PrevHash)
+			if eachBig.Cmp(zeroBig) == 0{
+				break
+			}
+			eachHash = eachBlock.PrevHash
+		}
+		return nil
+	})
+	fmt.Println(block)
+	return block,err
 }

@@ -13,4 +13,8 @@ func init() {
     beego.Router("/login",&controllers.LoginController{})
     //用户上传文件的功能
     beego.Router("/index",&controllers.UploadController{})
+    //查看认证数据证书页面
+    beego.Router("/cert_detail.html",&controllers.CertDetailController{})
+	//用户实名认证请求
+	beego.Router("/user_kyc",&controllers.UserKycController{})
 }
