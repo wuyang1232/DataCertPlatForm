@@ -66,9 +66,9 @@ func (u User) QueryUser() (*User, error) {
 func (u User) QueryUserByPhone() (*User, error) {
 	fmt.Println("通过手机查询用户失败")
 	fmt.Println(u.Phone)
-	row := db_mysql.Db.QueryRow("select id from user where phone = ?", u.Phone)
+	row := db_mysql.Db.QueryRow("select id, name, card, phone from user where phone = ?", u.Phone)
 	var user User
-	err := row.Scan(&user.Id)
+	err := row.Scan(&user.Id,&user.Name,&user.Card,&user.Phone)
 	if err != nil {
 		return nil, err
 	}

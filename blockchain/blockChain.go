@@ -1,6 +1,7 @@
 package blockchain
 
 import (
+	"DataCertPlatform/models"
 	"errors"
 	"fmt"
 	"github.com/boltdb/bolt"
@@ -218,20 +219,31 @@ func (bc BlockChain)QueryBlockByCertId(cert_id string)(*Block,error){
 		zeroBig := big.NewInt(0)
 		for{
 			eachBlockBytes := bucket.Get(eachHash)
+			fmt.Println()
 			eachBlock,err := DeSerialize(eachBlockBytes)
 			fmt.Println("所有区块信息",eachBlock)
 
-			fmt.Println("所有区块hash信息",string(eachBlock.Data))
+			fmt.Printf("所有区块hash信息%x\n",eachBlock.Data)
+			//fmt.Printf("data的hash值%x\n",ha.Hash)
+			record, err := models.DeserializeCertRecord(eachBlock.Data)
+			if err != nil{
+				err = errors.New("查询链上数据发生错误，请重试！")
+				return err
+			}
+			fmt.Println(record)
+			//fmt.Println(certRecord.CertHash)
 			fmt.Println(cert_id)
 			if err != nil{
 				break
 			}
 
 			//将遍历到的区块中的数据跟用户提供的认证号进行比较
-			if string(eachBlock.Data) == cert_id{//if成立，找到区块
+			if string(record.CertId) == cert_id{//if成立，找到区块
+				fmt.Println("aaaaa")
 				block = eachBlock
 				break
 			}
+
 			eachBig.SetBytes(eachBlock.PrevHash)
 			if eachBig.Cmp(zeroBig) == 0{
 				break
