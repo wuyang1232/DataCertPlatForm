@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e71eed7b-0b6b-4ff8-b2fb-3b79b8e65a6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/loginSmsController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/sendSmsController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/smsLogin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/smsRecord.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/app-c7b496447f00d1b093df.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/app-c7b496447f00d1b093df.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/sendSms.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/login_sms.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/login_sms_second.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cert_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/cert_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +54,14 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
     <property name="settings.editor.selected.configurable" value="goland.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\上课\GoProject\src\DataCertPlatform\views" />
       <recent name="D:\上课\GoProject\src\DataCertPlatform\static\js" />
       <recent name="D:\上课\GoProject\src\DataCertPlatform\static\css" />
-      <recent name="D:\上课\GoProject\src\DataCertPlatform\views" />
       <recent name="D:\上课\GoProject\src\DataCertPlatform\static\img" />
     </key>
   </component>
@@ -126,22 +137,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1604228839513" />
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1604406478414">
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1604406742574">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604406478414" />
-    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1604406478414">
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604406742574" />
+    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1604406742573">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604406478414" />
-    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1604406478411">
+    <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604406742573" />
+    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1604406742572">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604406478411" />
-    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1604406478414">
+    <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604406742572" />
+    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1604406742573">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604406478414" />
+    <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604406742573" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1603034848441">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -174,10 +185,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="0" y="0" width="782" height="864" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1603029280431" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1602818801553">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1604746288776">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1602818801553" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1604746288776" />
     <state x="491" y="323" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604241108564">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
